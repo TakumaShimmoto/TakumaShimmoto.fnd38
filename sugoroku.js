@@ -26,10 +26,10 @@ function rollDice(){
     const currentPlayer = players[playersIndex];
     const dice = Math.floor(Math.random() * 6) + 1;
     currentPlayer.position += dice;
-    document.getElementById('message').innerText = `${currentPlayer.name}は ${dice} 出たので、マス${currentPlayer.position} に進みました。`;
+    document.getElementById("message").innerText = `${currentPlayer.name}は ${dice} 出たので、マス${currentPlayer.position} に進みました。`;
     if (currentPlayer.position >= finishSetting){
-        document.getElementById('message').innerText = `${currentPlayer.name} が勝ちました！`;
-        document.getElementById('diceShuffle').style.display = 'none'; // ゲーム終了
+        document.getElementById("message").innerText = `${currentPlayer.name} が勝ちました！`;
+        document.getElementById("diceShuffle").style.display = "none"; // ゲーム終了
     }else{
         playersIndex = (playersIndex + 1) % players.length;
          updatePlayerPositions();
@@ -37,8 +37,8 @@ function rollDice(){
 }
 
  function updatePlayerPositions() {
-        const playersDiv = document.getElementById('players');
-        playersDiv.innerHTML = '';
+        const playersDiv = document.getElementById("players");
+        playersDiv.innerHTML = "";
         players.forEach(player => {
             playersDiv.innerHTML += `<p>${player.name}: マス ${player.position}</p>`;
         });
